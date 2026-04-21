@@ -35,27 +35,28 @@ The top 1% use **skills** — reusable instruction sets that turn AI into a doma
 ## ⚡ Quick Start
 
 ### Option 1: Clone the whole toolkit
+
 ```bash
 git clone https://github.com/systemystery/pm-skills-toolkit.git
 cd pm-skills-toolkit
 ```
 
 ### Option 2: Copy individual skills
+
 Browse the `/skills` folder and copy any `.md` file into your own `.claude/skills/` or project directory.
 
 ### Option 3: Use with your AI tool
 
 **Claude Code:**
+
 ```bash
 # Copy skills to your project
 cp -r skills/ your-project/.claude/skills/
 ```
 
-**Cursor:**
-The `.cursorrules` file at the root automatically loads the toolkit context.
+**Cursor:** The `.cursorrules` file at the root automatically loads the toolkit context.
 
-**Windsurf:**
-The `.windsurfrules` file at the root automatically loads the toolkit context.
+**Windsurf:** The `.windsurfrules` file at the root automatically loads the toolkit context.
 
 ---
 
@@ -82,11 +83,11 @@ Each skill is a standalone markdown file with clear trigger conditions, instruct
 
 Ready-to-fill templates for common PM deliverables:
 
-- [`templates/prd-template.md`](templates/prd-template.md) — Problem-first PRD structure
-- [`templates/okr-template.md`](templates/okr-template.md) — OKR with leading/lagging indicators
-- [`templates/launch-email-template.md`](templates/launch-email-template.md) — Internal launch announcement
-- [`templates/retro-template.md`](templates/retro-template.md) — Sprint retrospective with action items
-- [`templates/one-pager-template.md`](templates/one-pager-template.md) — Executive one-pager for quick alignment
+- [`prd-template.md`](templates/prd-template.md) — Problem-first PRD structure
+- [`okr-template.md`](templates/okr-template.md) — OKR with leading/lagging indicators
+- [`launch-email-template.md`](templates/launch-email-template.md) — Internal launch announcement
+- [`retro-template.md`](templates/retro-template.md) — Sprint retrospective with action items
+- [`one-pager-template.md`](templates/one-pager-template.md) — Executive one-pager for quick alignment
 
 ---
 
@@ -94,9 +95,9 @@ Ready-to-fill templates for common PM deliverables:
 
 Multi-step processes that chain skills together:
 
-- [`workflows/daily-standup.md`](workflows/daily-standup.md) — Morning context load + priorities
-- [`workflows/weekly-synthesis.md`](workflows/weekly-synthesis.md) — Cross-project status rollup
-- [`workflows/quarterly-planning.md`](workflows/quarterly-planning.md) — Strategy → OKRs → Roadmap pipeline
+- [`daily-standup.md`](workflows/daily-standup.md) — Morning context load + priorities
+- [`weekly-synthesis.md`](workflows/weekly-synthesis.md) — Cross-project status rollup
+- [`quarterly-planning.md`](workflows/quarterly-planning.md) — Strategy → OKRs → Roadmap pipeline
 
 ---
 
