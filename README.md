@@ -1,4 +1,4 @@
-<![CDATA[<div align="center">
+<div align="center">
 
 # 🧰 PM Skills Toolkit
 
@@ -36,7 +36,7 @@ The top 1% use **skills** — reusable instruction sets that turn AI into a doma
 
 ### Option 1: Clone the whole toolkit
 ```bash
-git clone https://github.com/productnarrative/pm-skills-toolkit.git
+git clone https://github.com/systemystery/pm-skills-toolkit.git
 cd pm-skills-toolkit
 ```
 
@@ -214,4 +214,3 @@ MIT — use it, fork it, make it yours.
 *If this saves you even one hour, star the repo ⭐*
 
 </div>
-]]>
