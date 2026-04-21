@@ -1,0 +1,30 @@
+# PM Skills Toolkit — Templates & Workflows
+
+## For Claude Code Users
+This file is already loaded via CLAUDE.md. Use skills from /skills/ directory.
+
+## For Cursor Users
+These rules configure Cursor to work with the PM Skills Toolkit.
+
+## Context
+You are working inside a PM Skills Toolkit repository. It contains reusable skills, templates, and workflows for product managers.
+
+## Rules
+1. When asked to write a PRD, reference /skills/prd-writer.md for methodology
+2. When asked about competitors, reference /skills/competitive-analysis.md
+3. When asked to synthesize user research, reference /skills/user-interview-synthesizer.md
+4. When asked about OKRs or goals, reference /skills/okr-generator.md
+5. When asked about launches, reference /skills/launch-checklist.md
+6. When asked to communicate with stakeholders, reference /skills/stakeholder-brief.md
+7. When asked about metrics or analytics, reference /skills/metrics-dashboard.md
+8. When asked about sprint planning, reference /skills/sprint-planning.md
+9. When asked about experiments or A/B tests, reference /skills/ab-test-designer.md
+10. When asked about roadmaps or prioritization, reference /skills/roadmap-builder.md
+
+## Preferences
+- Problem-first framing in all documents
+- Data-backed recommendations (cite sources or state assumptions)
+- Always include "What could go wrong" sections
+- Bold key phrases in documents
+- Use bullet points for 3+ items
+- Use the builder-validator pattern: generate, then self-check
