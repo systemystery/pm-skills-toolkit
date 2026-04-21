@@ -76,6 +76,7 @@ Each skill is a standalone markdown file with clear trigger conditions, instruct
 | [Sprint Planning](skills/sprint-planning.md) | Generates sprint plans from backlog | Sprint ceremonies |
 | [A/B Test Designer](skills/ab-test-designer.md) | Experiment design with stats rigor | Growth experiments |
 | [Roadmap Builder](skills/roadmap-builder.md) | Visual roadmap from priorities | Stakeholder alignment |
+| [Task Prioritizer](skills/task-prioritizer.md) | LNO Framework (Shreyas Doshi) — classify tasks as Leverage/Neutral/Overhead | When you have 100 things on your plate |
 
 ---
 
@@ -120,7 +121,8 @@ pm-skills-toolkit/
 │   ├── metrics-dashboard.md
 │   ├── sprint-planning.md
 │   ├── ab-test-designer.md
-│   └── roadmap-builder.md
+│   ├── roadmap-builder.md
+│   └── task-prioritizer.md
 ├── templates/
 │   ├── prd-template.md
 │   ├── okr-template.md
