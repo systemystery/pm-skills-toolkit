@@ -96,6 +96,7 @@ Ready-to-fill templates for common PM deliverables:
 
 Multi-step processes that chain skills together:
 
+- [`pm-daily-system.md`](workflows/pm-daily-system.md) — **The master workflow** — 15-min daily LNO audit that chains all skills together
 - [`daily-standup.md`](workflows/daily-standup.md) — Morning context load + priorities
 - [`weekly-synthesis.md`](workflows/weekly-synthesis.md) — Cross-project status rollup
 - [`quarterly-planning.md`](workflows/quarterly-planning.md) — Strategy → OKRs → Roadmap pipeline
@@ -130,6 +131,7 @@ pm-skills-toolkit/
 │   ├── retro-template.md
 │   └── one-pager-template.md
 ├── workflows/
+│   ├── pm-daily-system.md    ← Master workflow (start here)
 │   ├── daily-standup.md
 │   ├── weekly-synthesis.md
 │   └── quarterly-planning.md
