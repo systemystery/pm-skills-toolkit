@@ -1,12 +1,14 @@
 ---
 name: task-prioritizer
-description: Use when the user has too many tasks, feels overwhelmed, needs to prioritize work, or asks what to focus on. Also triggers on keywords like "100 things", "overwhelmed", "what should I work on", "prioritize", "LNO", "leverage".
+description: Use when the user has too many tasks, feels overwhelmed, needs to prioritize work, or asks what to focus on. Also triggers on keywords like "100 things", "overwhelmed", "what should I work on", "prioritize", "4A", "amplify", "automate", "abandon".
 tools: []
 ---
 
-# Task Prioritizer Skill (LNO Framework)
+# Task Prioritizer Skill (4A Framework)
 
-Based on Shreyas Doshi's LNO Framework + Radical Delegation Matrix.
+Extends Shreyas Doshi's LNO Framework for the AI era.
+
+**The core question LNO never asked: "Should AI do this instead of me?"**
 
 ## Trigger
 When the user:
@@ -14,12 +16,84 @@ When the user:
 - Asks "what should I work on?"
 - Says they're overwhelmed or have "100 things on their plate"
 - Asks to prioritize a task list
-- Mentions LNO, leverage, or Shreyas Doshi
+- Mentions prioritization, LNO, 4A, leverage
+
+## The 4A Framework
+
+Every task gets TWO questions:
+1. **Is this a brainer or a no-brainer?** (Does it need my judgment, context, relationships — or is it routine?)
+2. **What's the impact?** (If I do this excellently vs. adequately, does the outcome change 10x?)
+
+That gives you four categories:
+
+| | 🧠 BRAINER (needs your judgment) | 🤖 NO-BRAINER (routine/mechanical) |
+|---|---|---|
+| **HIGH IMPACT** | 🔴 **AMPLIFY** — You drive, AI thinks with you | ⚡ **ACCELERATE** — AI drafts, you review closely |
+| **LOW IMPACT** | ⚡ **ACCELERATE** — AI drafts, you glance | 🤖 **AUTOMATE** — AI handles entirely |
+| **NO IMPACT** | ❌ **ABANDON** — Stop doing it | ❌ **ABANDON** — Definitely stop doing it |
+
+### 🔴 AMPLIFY (Brainer + High Impact)
+**What**: Work where YOUR judgment + AI's capability = 10x results.
+**How**: Use AI as a thinking partner. Share full context. Ask it to challenge your assumptions. Iterate together.
+**Your role**: You drive. AI co-pilots.
+**Time**: Give these your best energy blocks. Perfectionism welcome.
+
+Examples:
+- Product strategy → AI researches, you decide
+- Critical stakeholder negotiation → AI preps talking points, you read the room
+- Complex PRD → AI drafts structure, you bring domain judgment
+- Prioritization decisions → AI provides data, you make the call
+
+**Prompt pattern**: "Here's my full context: [everything]. Help me think through this. Challenge my assumptions. What am I missing?"
+
+### ⚡ ACCELERATE (Medium judgment needed OR high impact routine)
+**What**: Work that needs to get done well, but AI can do 80% of the lifting.
+**How**: AI creates the first draft. You review, adjust, ship.
+**Your role**: Editor, not author. Quality check, not creation.
+**Time**: Time-box aggressively. 30 min max per task.
+
+Examples:
+- Sprint planning → AI generates from backlog, you adjust
+- Weekly status update → AI drafts from project data, you add context
+- OKR first drafts → AI proposes from strategy, you refine
+- Meeting prep → AI pulls stakeholder context, you decide what to raise
+
+**Prompt pattern**: "Draft this for me based on [context]. I'll review and adjust."
+
+### 🤖 AUTOMATE (No-brainer + Low impact)
+**What**: Routine tasks that AI can handle entirely. No judgment needed.
+**How**: Set it up once. Let AI run it. Don't look at the output.
+**Your role**: None. Seriously — stop touching these.
+**Time**: Zero ongoing time. One-time setup only.
+
+Examples:
+- Meeting note summaries → Granola/Otter auto-summarizes
+- Scheduling emails → AI sends based on calendar
+- Wiki/doc updates → AI updates from merged PRs
+- Routine status reports → AI pulls from tools and posts to Slack
+- Formatting slides → AI formats, you never look
+
+**Prompt pattern**: "Do this automatically every [time]. Don't ask me. Just do it."
+
+### ❌ ABANDON (No impact — regardless of brainer status)
+**What**: Work that shouldn't exist. Not "do a bad job" — STOP DOING IT.
+**How**: Delete it. Decline the meeting. Remove yourself from the thread.
+**Your role**: Courageous eliminator.
+**Time**: Negative time — every abandoned task GIVES you time back.
+
+Examples:
+- The recurring meeting nobody gets value from → Cancel it
+- The report nobody reads → Stop writing it
+- The approval chain that exists "because it always has" → Challenge it
+- The Slack thread where your input isn't needed → Leave it
+- The dashboard nobody checks → Let it rot
+
+**The test**: "If I stopped doing this, would anyone notice within 2 weeks?" If no → ABANDON.
 
 ## Instructions
 
 ### Phase 1: Gather the Task Dump
-Ask the user to list EVERYTHING on their plate. Use the ask-user-questions tool if available. Prompt:
+Ask the user to list EVERYTHING on their plate:
 
 ```
 List every task, meeting, project, and to-do currently on your plate.
@@ -27,144 +101,121 @@ Don't filter. Don't organize. Just dump it all.
 Include things you think are "small" — those are often the hidden time drains.
 ```
 
-If the user provides a partial list, ask:
-- "What meetings do you have this week that require prep?"
-- "What do you owe anyone? (follow-ups, reviews, documents)"
-- "What's been sitting on your list for 2+ weeks that you keep avoiding?"
+If incomplete, probe:
+- "What meetings require prep this week?"
+- "What do you owe anyone? (follow-ups, reviews, docs)"
+- "What's been on your list for 2+ weeks that you keep avoiding?"
 
-### Phase 2: Classify Each Task Using LNO
+### Phase 2: Classify Each Task
 
 For each task, ask two questions:
-1. **What's the return multiplier?** If I spend X hours on this, do I get 10X value (Leverage), 1X value (Neutral), or <1X value (Overhead)?
-2. **What happens if I do a mediocre job?** If the answer is "nothing much" — it's probably Neutral or Overhead.
 
-#### LNO Classification Guide
+**Question 1 — Brainer or No-Brainer?**
+- Does this need my specific judgment, relationships, or domain context?
+- Would the output be meaningfully worse if someone else (or AI) did it?
+- If YES → Brainer. If NO → No-brainer.
 
-| Category | Return | Your Best Effort Matters? | Example |
-|----------|--------|--------------------------|---------|
-| **🔴 Leverage (L)** | 10x-100x | YES — quality here = disproportionate impact | Product strategy doc, key stakeholder alignment, critical PRD, hiring decision, major customer escalation |
-| **🟡 Neutral (N)** | ~1x | Somewhat — good is fine, great doesn't add much | Sprint planning, routine 1:1 prep, standard status updates, most meetings, regular bug triage |
-| **⚪ Overhead (O)** | <1x | NO — just get it done | Expense reports, formatting slides, routing approvals, updating wikis, most email replies, calendar management |
+**Question 2 — What's the impact multiplier?**
+- If I do this excellently vs. adequately, does the outcome change significantly?
+- Does this affect our users, revenue, strategy, or team direction?
+- HIGH impact → the quality of my effort matters 10x
+- LOW impact → good enough is truly good enough
+- NO impact → why are we doing this?
 
-#### The Key Insight
-> **Most PMs treat 80% of their tasks as Leverage. In reality, only 10-20% are Leverage. The rest are Neutral or Overhead eating your best hours.**
-
-### Phase 3: Build the LNO Matrix
-
-Present the classification to the user:
+### Phase 3: Present the 4A Matrix
 
 ```markdown
-# Your LNO Analysis — [Date]
+# Your 4A Analysis — [Date]
 
-## 🔴 LEVERAGE (Do these with your best energy)
-These tasks have 10x-100x return. Perfectionism is ENCOURAGED here.
+## 🔴 AMPLIFY (Brainer + High Impact) — You + AI as thinking partner
+These tasks need YOUR judgment, amplified by AI.
 
-| # | Task | Why It's Leverage | Recommended Time | When |
-|---|------|------------------|-----------------|------|
-| 1 | [Task] | [Impact explanation] | [Hours] | [Best energy block] |
-| 2 | [Task] | [Impact explanation] | [Hours] | [Best energy block] |
+| # | Task | Why It's a Brainer | AI's Role | Time Block |
+|---|------|-------------------|-----------|------------|
+| 1 | [Task] | [What judgment is needed] | [How AI helps] | [Best energy block] |
 
-**⏰ Total Leverage time: [X] hours this week**
-**🎯 Rule: Spend 60-70% of your deep work time here**
+**⏰ Total: [X] hours · 🎯 Rule: 60% of deep work time here**
 
 ---
 
-## 🟡 NEUTRAL (Do these well enough, then move on)
-These tasks have ~1x return. Good is fine. Great adds nothing.
+## ⚡ ACCELERATE (AI drafts, you review)
+AI does the heavy lifting. You steer.
 
-| # | Task | Time Box | Shortcuts |
-|---|------|----------|-----------|
-| 1 | [Task] | [Max X min] | [How to do this faster] |
-| 2 | [Task] | [Max X min] | [How to do this faster] |
+| # | Task | AI Does | You Do | Time Box |
+|---|------|---------|--------|----------|
+| 1 | [Task] | [AI's 80%] | [Your 20% review] | Max [X] min |
 
-**⏰ Total Neutral time: [X] hours this week**
-**🎯 Rule: Time-box these. Set a timer. When it rings, ship it.**
+**⏰ Total: [X] hours · 🎯 Rule: Time-box. When timer rings, ship it.**
 
 ---
 
-## ⚪ OVERHEAD (Minimize, delegate, or automate)
-These tasks have <1x return. Actively try to spend LESS time here.
+## 🤖 AUTOMATE (AI handles entirely)
+Set up once. Never touch again.
 
-| # | Task | Can You... | Action |
-|---|------|-----------|--------|
-| 1 | [Task] | Delegate? Automate? Skip? | [Specific action] |
-| 2 | [Task] | Delegate? Automate? Skip? | [Specific action] |
+| # | Task | Automation | Setup Time | Ongoing Time |
+|---|------|-----------|------------|-------------|
+| 1 | [Task] | [How to automate] | [One-time] | Zero |
 
-**⏰ Total Overhead time: [X] hours this week**
-**🎯 Rule: If it takes <5 min, batch it. If someone else can do it, delegate.**
+**⏰ Ongoing time: ZERO · 🎯 Rule: If you're still manually doing these, you're wasting leverage.**
+
+---
+
+## ❌ ABANDON (Stop doing these)
+Tasks that shouldn't exist. Kill them.
+
+| # | Task | Why It's Safe to Kill | Who Notices? | Action |
+|---|------|----------------------|-------------|--------|
+| 1 | [Task] | [Reason] | [Nobody / Maybe X] | [Cancel / Decline / Unsubscribe] |
+
+**⏰ Time recovered: [X] hours/week · 🎯 Rule: Every abandoned task gives you time for an AMPLIFY task.**
 
 ---
 
 ## 📊 Your Time Allocation
 
-| Category | Tasks | Hours | % of Week | Ideal % |
-|----------|-------|-------|-----------|---------|
-| 🔴 Leverage | [N] | [X] | [Y]% | 60-70% |
-| 🟡 Neutral | [N] | [X] | [Y]% | 20-30% |
-| ⚪ Overhead | [N] | [X] | [Y]% | <10% |
+| Category | Tasks | Hours/Week | Current % | Ideal % |
+|----------|-------|-----------|-----------|---------|
+| 🔴 Amplify | [N] | [X] | [Y]% | 50-60% |
+| ⚡ Accelerate | [N] | [X] | [Y]% | 20-30% |
+| 🤖 Automate | [N] | [X] | [Y]% | <5% (setup only) |
+| ❌ Abandon | [N] | [X] | [Y]% | 0% (eliminated) |
+
+## 💡 The Opportunity Cost Question
+> What AMPLIFY task am I NOT doing because I'm manually doing [biggest Automate/Abandon task]?
 ```
 
-### Phase 4: Apply the Delegation Matrix
-For Leverage and Neutral tasks, check replaceability:
+### Phase 4: Challenge the User
+Push back if:
+- Too many tasks in AMPLIFY (most PMs overcategorize — if >30% of tasks are "brainer + high impact," they're wrong)
+- Nothing in ABANDON (every PM has tasks that shouldn't exist — they're just afraid to kill them)
+- Automate tasks they're still doing manually ("Why are you still writing meeting summaries by hand?")
 
-| | Only You Can Do It | Others Could Do It |
-|---|---|---|
-| **🔴 Leverage** | ✅ **YOUR #1 PRIORITY** — block 2-4 hour chunks | 🤝 Delegate with close oversight + clear brief |
-| **🟡 Neutral** | ⚡ Do it, but time-box aggressively | 🤝 Delegate fully — check output once |
-| **⚪ Overhead** | 🤖 Automate or batch into one session | 🗑️ Delegate and forget, or eliminate entirely |
-
-### Phase 5: Create the Action Plan
-
-```markdown
-## This Week's Focus Plan
-
-### Monday-Tuesday: Leverage Block
-- [ ] [Leverage Task 1] — 2 hours, deep work, no meetings
-- [ ] [Leverage Task 2] — 1.5 hours, deep work
-
-### Overhead Batch (30 min, Wednesday morning)
-- [ ] [Overhead 1] — 5 min
-- [ ] [Overhead 2] — 10 min
-- [ ] [Overhead 3] — 5 min
-
-### Delegated This Week
-| Task | Delegated To | Due | Check-in |
-|------|-------------|-----|----------|
-| [Task] | @name | [Date] | [When to review] |
-
-### Eliminated This Week
-| Task | Why It's Safe to Skip | Risk If We Don't |
-|------|----------------------|-----------------|
-| [Task] | [Reason] | [Low/None] |
-
-### The Uncomfortable Question
-> **What am I NOT doing because I'm spending time on [biggest overhead task]?**
-> The opportunity cost of [overhead task] is [leverage task you're not doing].
-```
-
-### Phase 6: Weekly Audit Prompt
-Suggest the user runs this every Monday:
-
+### Phase 5: Weekly Audit Prompt
 ```
 Look at my calendar and task list for this week.
-Classify every item as Leverage, Neutral, or Overhead.
-Am I spending 60%+ of my deep work time on Leverage tasks?
-What can I delegate, automate, or eliminate?
+Classify every item using the 4A Framework:
+🔴 Amplify — Am I using AI as a thinking partner on these?
+⚡ Accelerate — Is AI drafting these for me?
+🤖 Automate — Why am I still doing these manually?
+❌ Abandon — What can I stop doing entirely?
+
+Show me my time allocation vs. ideal (60/25/5/0).
 ```
 
 ## Self-Check
 Before presenting:
-- [ ] Every task is classified as L, N, or O with clear reasoning
-- [ ] Leverage tasks are limited (10-20% of total tasks, not 50%+)
-- [ ] User was challenged if they classified too many things as Leverage
-- [ ] Overhead tasks have specific "minimize" actions (delegate/automate/eliminate)
-- [ ] Time allocation adds up and shows current vs. ideal split
-- [ ] The "uncomfortable question" about opportunity cost is included
-- [ ] Action plan has specific time blocks, not just a priority list
-- [ ] Delegation matrix is applied (who else can do this?)
+- [ ] Every task classified into exactly one of the 4 A's
+- [ ] AMPLIFY tasks are limited (max 20-30% of total tasks)
+- [ ] User was challenged if nothing is in ABANDON
+- [ ] AUTOMATE tasks have specific automation strategies, not just "automate this"
+- [ ] Each AMPLIFY task specifies HOW AI helps (not just "use AI")
+- [ ] Each ACCELERATE task has a time box
+- [ ] Time allocation table shows current vs. ideal split
+- [ ] The opportunity cost question is included
+- [ ] At least one ABANDON recommendation (every PM has something to kill)
 
 ## Output Format
-Structured markdown with the LNO matrix, emoji-coded categories (🔴🟡⚪), time allocation table, delegation recommendations, and a concrete weekly action plan. Always end with the opportunity cost question — it's the most powerful reframe.
+Structured markdown with the 4A matrix, emoji-coded categories, time allocation table, and the opportunity cost question at the end.
 
-## Why This Skill Matters
-> "The biggest problem isn't that PMs can't prioritize. It's that they treat everything as a Leverage task. When everything is a priority, nothing is." — Inspired by Shreyas Doshi
+## Credits
+The 4A Framework extends Shreyas Doshi's LNO Framework for the AI era. LNO asks "how much effort?" The 4A Framework asks "who should do the effort — you, AI, or nobody?"
