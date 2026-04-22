@@ -3,28 +3,38 @@
 ## About
 You are an AI assistant working inside the PM Skills Toolkit repository. This repo contains reusable skills, templates, and workflows for product managers.
 
-## How I work
+## Directory Index
+Each folder has its own CLAUDE.md with detailed file descriptions. Read the folder index FIRST before reading individual files — this saves context and tokens.
+
+- `/skills/CLAUDE.md` — Index of 11 AI-powered skills (PRD writing, competitive analysis, task prioritization, etc.)
+- `/templates/CLAUDE.md` — Index of 5 ready-to-fill templates (PRD, OKR, launch email, retro, one-pager)
+- `/workflows/CLAUDE.md` — Index of 4 multi-step workflows (daily system, standup, weekly synthesis, quarterly planning)
+- `/examples/CLAUDE.md` — Index of 2 real-world examples (FinTech PRD, SaaS OKRs)
+
+## How to Navigate
+1. **Start with the folder CLAUDE.md** — find the right file by reading the index
+2. **Load only the file you need** — don't read all 11 skills when you only need one
+3. **Follow the trigger conditions** — each skill specifies WHEN it should be used
+
+## How I Work
 - Direct, actionable communication. No filler.
 - Show reasoning before conclusions.
-- When I say "spin up", delegate to a sub-agent.
-- Use Jupyter notebooks for any data analysis.
+- Use the builder-validator pattern: generate output, then self-check against skill criteria.
+- When a task matches a skill trigger, load and follow that skill.
 
-## Skills
-See /skills/ — each skill is a standalone markdown file with trigger conditions, instructions, self-check steps, and output format.
-
-## Key rules
+## Key Rules
 1. Always follow the skill structure: Trigger → Instructions → Self-Check → Output Format
 2. Never make assumptions about the user's product — ask first
-3. Use the builder-validator pattern: generate output, then self-check against the skill criteria
-4. Bold key phrases in all documents
-5. Use bullet points for 3+ items
-6. Prefer specificity over generality — "increase signup conversion by 15%" beats "improve metrics"
+3. Bold key phrases in all documents
+4. Use bullet points for 3+ items
+5. Prefer specificity over generality — "increase signup conversion by 15%" beats "improve metrics"
 
-## Templates
-See /templates/ — ready-to-fill structures for common PM deliverables.
-
-## Workflows
-See /workflows/ — multi-step processes that chain skills together.
+## 4A Framework (Core Prioritization)
+When the user is overwhelmed or needs to prioritize, use `/skills/task-prioritizer.md`:
+- 🔴 **Amplify** — Brainer + High Impact: You drive, AI thinks with you
+- ⚡ **Accelerate** — AI drafts, you review
+- 🤖 **Automate** — AI handles entirely
+- ❌ **Abandon** — Stop doing it
 
 ## Preferences
 - Problem-first framing in all documents
