@@ -7,9 +7,11 @@ You are an AI assistant working inside the PM Skills Toolkit repository. This re
 Each folder has its own CLAUDE.md with detailed file descriptions. Read the folder index FIRST before reading individual files — this saves context and tokens.
 
 - `/skills/CLAUDE.md` — Index of 11 AI-powered skills (PRD writing, competitive analysis, task prioritization, etc.)
-- `/templates/CLAUDE.md` — Index of 5 ready-to-fill templates (PRD, OKR, launch email, retro, one-pager)
+- `/templates/CLAUDE.md` — Index of 6 ready-to-fill templates (PRD, OKR, launch email, retro, one-pager, people file)
 - `/workflows/CLAUDE.md` — Index of 4 multi-step workflows (daily system, standup, weekly synthesis, quarterly planning)
+- `/guides/CLAUDE.md` — Index of 2 best-practice guides (prompting techniques, context management)
 - `/examples/CLAUDE.md` — Index of 2 real-world examples (FinTech PRD, SaaS OKRs)
+- `GOALS.md` — Current quarterly priorities (update weekly)
 
 ## How to Navigate
 1. **Start with the folder CLAUDE.md** — find the right file by reading the index

@@ -89,6 +89,16 @@ Ready-to-fill templates for common PM deliverables:
 - [`launch-email-template.md`](templates/launch-email-template.md) — Internal launch announcement
 - [`retro-template.md`](templates/retro-template.md) — Sprint retrospective with action items
 - [`one-pager-template.md`](templates/one-pager-template.md) — Executive one-pager for quick alignment
+- [`people-file-template.md`](templates/people-file-template.md) — Stakeholder dossier that compounds over time
+
+---
+
+## 📚 Guides
+
+Best practices for getting 10x output from your AI tools:
+
+- [`prompting-guide.md`](guides/prompting-guide.md) — 3 tiers of prompting, sub-agent patterns, ask-user-questions tool
+- [`context-management.md`](guides/context-management.md) — Token efficiency, 3-tier loading, context budgeting
 
 ---
 
@@ -108,7 +118,8 @@ Multi-step processes that chain skills together:
 ```
 pm-skills-toolkit/
 ├── README.md                    ← You are here
-├── CLAUDE.md                    ← Claude Code configuration
+├── CLAUDE.md                    ← Claude Code configuration (root index)
+├── GOALS.md                     ← Quarterly priorities
 ├── .cursorrules                 ← Cursor configuration
 ├── .windsurfrules               ← Windsurf configuration
 ├── LICENSE                      ← MIT License
@@ -125,17 +136,25 @@ pm-skills-toolkit/
 │   ├── roadmap-builder.md
 │   └── task-prioritizer.md
 ├── templates/
+│   ├── CLAUDE.md                ← Template index
 │   ├── prd-template.md
 │   ├── okr-template.md
 │   ├── launch-email-template.md
 │   ├── retro-template.md
-│   └── one-pager-template.md
+│   ├── one-pager-template.md
+│   └── people-file-template.md
 ├── workflows/
-│   ├── pm-daily-system.md    ← Master workflow (start here)
+│   ├── CLAUDE.md                ← Workflow index
+│   ├── pm-daily-system.md       ← Master workflow (start here)
 │   ├── daily-standup.md
 │   ├── weekly-synthesis.md
 │   └── quarterly-planning.md
+├── guides/
+│   ├── CLAUDE.md                ← Guides index
+│   ├── prompting-guide.md
+│   └── context-management.md
 └── examples/
+    ├── CLAUDE.md                ← Examples index
     ├── fintech-prd-example.md
     └── saas-okr-example.md
 ```
